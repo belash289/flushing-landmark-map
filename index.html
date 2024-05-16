@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Flushing Historical landmarks Map</title>
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.14.0/mapbox-gl.css" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.14.0/mapbox-gl.js"></script>
+    <style>
+        html,
+        head,
+        body,
+        #main-container {
+            height: 100%;
+            width: 100%;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        #main-container {
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        nav {
+            padding: 1rem;
+            border-bottom: 1px solid #000;
+            display: flex;
+        }
+
+        .nav-links {
+            flex-grow: 1;
+            justify-content: end;
+            display: flex;
+        }
+
+        .nav-link {
+            display: inline-block;
+            font-size: .9rem;
+        }
+
+        #content-container {
+            flex-grow: 1;
+            display: flex;
+            min-height: 0;
+        }
+
+        #sidebar {
+            width: 348px;
+            padding: 1rem;
+            font-size: 0.9rem;
+            overflow-y: scroll;
+            box-sizing: border-box;
+        }
+
+        #map {
+            height: 100%;
+            flex-grow: 1;
+        }
+
+        .title {
+            font-weight: 600;
+        }
+
+        @media only screen and (max-width: 800px) {
+            #content-container {
+                flex-direction: column-reverse;
+            }
+
+            #map {
+                height: 60%;
+                flex-shrink: 0;
+            }
+
+            #sidebar {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="main-container">
+        <nav>
+            <div class="title">Historical Development of Flushing, Queens</div>
+            <div class="nav-links">
+                <a class="nav-link" href="https://github.com/ashleyfu/flushing-historical-development" target="_blank"
+                    rel="noopener noreferrer">Github</a>
+            </div>
+
+        </nav>
+        <div id="content-container">
+            <div id="sidebar">
+                <h2>Explore Flushing's Historical Landmarks</h2>
+                <p class="call-to-action">Click on various landmarks on the map to learn more about their historical
+                    significance and evolution over time.</p>
+                <h3>Introduction to the Historical Development of Flushing</h3>
+                <p>Welcome to our interactive exploration of the historical development of Flushing, Queens. This
+                    webpage provides an in-depth look at the significant landmarks and events that have shaped this
+                    vibrant neighborhood over time.</p>
+                <h3>Why Focus on Flushing?</h3>
+                <p>Flushing, with its rich history and diverse cultural landscape, serves as a unique example of urban
+                    development. Understanding its historical evolution offers insights into the broader patterns of
+                    urban growth and change.</p>
+                <h3>Importance for Urban Studies</h3>
+                <p>The historical landmarks and events in Flushing are more than just points on a map; they reflect the
+                    socio-economic and cultural transformations of the area. For urban planners and historians, these
+                    elements are crucial for:</p>
+                <ul>
+                    <li><strong>Analyzing Historical Growth:</strong> Understanding the historical context of Flushing
+                        helps in analyzing its development patterns and planning future urban projects.</li>
+                    <li><strong>Preservation Efforts:</strong> Data on historical landmarks assist in making informed
+                        decisions regarding preservation and adaptive reuse of historical sites.</li>
+                    <li><strong>Cultural Heritage:</strong> Recognizing and highlighting significant historical sites
+                        helps in promoting cultural heritage and community identity.</li>
+                </ul>
+
+            </div>
+            <div id="map"></div>
+        </div>
+    </div>
+
+    <script src="js/scripts.js"></script>
+
+</body>
+
+</html>
